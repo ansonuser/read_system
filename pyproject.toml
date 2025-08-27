@@ -1,0 +1,32 @@
+[project]
+name = "read-system"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "ansonuser",email = "ansonwang510@gmail.com"}
+]
+readme = "README.md"
+requires-python = "<3.14,>=3.10"
+dependencies = [
+    "faiss-cpu (>=1.11.0.post1,<2.0.0)",
+    "openai (>=1.99.6,<2.0.0)",
+    "torch (<2.2)",
+    "sentence-transformers>=2.7.0,<3.0.0",  
+    "numpy>=1.21.0,<2.0.0",
+    "streamlit (>=1.48.0,<2.0.0)",
+    "dotenv (>=0.9.9,<0.10.0)",
+    "fitz (>=0.0.1.dev2,<0.0.2)",
+    "bs4 (>=0.0.2,<0.0.3)",
+    "pymupdf (>=1.26.3,<2.0.0)"
+]
+
+[tool.poetry]
+packages = [{include = "read_system", from = "src"}]
+
+[tool.poetry.dependencies]
+sentence-transformers = { version = "^2.7.0", extras = ["torch"] }  # Poetry 扩展功能
+numpy = ">=1.21.0,<2.0.0"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
